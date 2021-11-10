@@ -10,10 +10,11 @@ import {
 
 //All functions below are for interacting with cloud service firebase
 
-export async function createArticle({ title, body }) {
-  const data = { title, body, data: Timestamp.now() };
+export async function createArticle({ title, rating, body }) {
+  const data = { title, rating, body, data: Timestamp.now() };
   const docRef = await addDoc(collection(db, "articles"), {
     Title: title,
+    Rating: rating,
     Body: body,
     Author: "Claudia",
   });

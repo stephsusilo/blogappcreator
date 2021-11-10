@@ -22,9 +22,9 @@ export default function ArticleEntry({ setWriting, addArticle }) {
     <div>
       <form onSubmit={submit}>
         {error && <p>{error}</p>}
-        Restaurant <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        Rating <input type="number" min = "0" max="5" value={rating} onChange={(e) => setRating(e.target.value)}/> 
-        Review{" "}
+        Title <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        Rating <input type="number" min="1" max="5" value={rating} onChange={(e) => setRating(e.target.value)} />
+        Body{" "}
         <textarea
           rows="8"
           value={body}

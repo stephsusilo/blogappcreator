@@ -32,7 +32,7 @@ export default function App() {
     });
   }
 
-  //Change article state in nav and page
+  //change article state in nav and page
   function removeArticle(id) {
     deleteArticle(id); //update to firebase
     //Update to React state
