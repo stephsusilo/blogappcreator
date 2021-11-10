@@ -13,7 +13,7 @@ export default function ArticleEntry({ setWriting, addArticle }) {
     if (!title.trim() || !body.trim()) {
       setError("The title and body must be supplied");
     } else {
-      addArticle({ title, body });
+      addArticle({ title, rating, body });
       // setWriting(false);
     }
   }
