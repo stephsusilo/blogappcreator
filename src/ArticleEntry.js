@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ArticleEntry({ setWriting, addArticle }) {
-  //assign props to different states 
+  //assign props to different states
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ export default function ArticleEntry({ setWriting, addArticle }) {
       setError("The title and body must be supplied");
     } else {
       addArticle({ title, body });
-      setWriting(false);
+      // setWriting(false);
     }
   }
 

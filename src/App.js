@@ -21,9 +21,9 @@ export default function App() {
       fetchArticles().then(setArticles);
     }
   }, [user]);
-
   // Update the "database" *then* update the internal React state. These
   // two steps are definitely necessary.
+
   function addArticle({ title, body }) {
     createArticle({ title, body }).then((article) => {
       setArticle(article);
@@ -34,8 +34,10 @@ export default function App() {
 
   //change article state in nav and page
   function removeArticle(id) {
-    console.log("removing", id);
-    deleteArticle(id);
+    deleteArticle(id); //update to firebase
+    //Update to React state
+    const newArticles = articles.filter((article) => article.id !== id);
+    setArticles(newArticles);
   }
 
   return (
