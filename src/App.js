@@ -24,15 +24,15 @@ export default function App() {
   // Update the "database" *then* update the internal React state. These
   // two steps are definitely necessary.
 
-  function addArticle({ title, body }) {
-    createArticle({ title, body }).then((article) => {
+  function addArticle({ title, rating, body }) {
+    createArticle({ title, rating, body }).then((article) => {
       setArticle(article);
       setArticles([article, ...articles]);
       setWriting(false);
     });
   }
 
-  //change article state in nav and page
+  //Change article state in nav and page
   function removeArticle(id) {
     deleteArticle(id); //update to firebase
     //Update to React state

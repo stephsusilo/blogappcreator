@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function ArticleEntry({ setWriting, addArticle }) {
   //assign props to different states
   const [title, setTitle] = useState("");
+  const [rating, setRating] = useState("");
   const [body, setBody] = useState("");
   const [error, setError] = useState(null);
 
@@ -21,8 +22,9 @@ export default function ArticleEntry({ setWriting, addArticle }) {
     <div>
       <form onSubmit={submit}>
         {error && <p>{error}</p>}
-        Title <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        Body{" "}
+        Restaurant <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        Rating <input type="number" min = "0" max="5" value={rating} onChange={(e) => setRating(e.target.value)}/> 
+        Review{" "}
         <textarea
           rows="8"
           value={body}

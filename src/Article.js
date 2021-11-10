@@ -11,9 +11,10 @@ export default function Article({ article, removeArticle }) {
         <div className="article-display">
           <h2>{article.Title}</h2>
           <p className="date">{`Written by: ${article.Author}`}</p>
+          <p className="rating">{'Rating: '}</p>
           <p className="body">{article.Body}</p>
-          <button onClick={() => removeArticle(article.id)}> delete </button>
-          <button> edit </button>
+          <button onClick={() => removeArticle(article.id)}> Delete </button>
+          <button> Edit </button>
         </div>
       )}
     </article>
