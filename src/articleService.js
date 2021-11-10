@@ -19,19 +19,8 @@ export async function createArticle({ title, rating, body }) {
     Author: "Claudia",
   });
 
-  //const doc = await docRef.get();
   return docRef;
 }
-
-// export async function fetchArticles() {
-//   const snapshot = await getDocs(
-//     query(collection(db, "articles"), orderBy("date", "desc"), limit(20))
-//   );
-//   return snapshot.docs.map((doc) => ({
-//     id: doc.id,
-//     ...doc.data(),
-//   }));
-// }
 
 export async function fetchArticles() {
   const querySnapshot = await getDocs(collection(db, "articles"));
@@ -45,11 +34,3 @@ export async function deleteArticle(id) {
   await deleteDoc(doc(db, "articles", id));
   return id;
 }
-
-// export async function fetchArticles() {
-//   return Object.entries(articles).map(([id, data]) => ({ id, ...data }));
-// }
-
-// export async function fetchArticleById(id) {
-//   return articles[id];
-// }

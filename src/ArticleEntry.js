@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ArticleEntry({ setWriting, addArticle }) {
+export default function ArticleEntry({ addArticle }) {
   //assign props to different states
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState("");
@@ -11,10 +11,9 @@ export default function ArticleEntry({ setWriting, addArticle }) {
     setError(null);
     e.preventDefault();
     if (!title.trim() || !body.trim()) {
-      setError("The title, rating, and body must be supplied");
+      setError("The restaurant name, rating, and review must be supplied");
     } else {
       addArticle({ title, rating, body });
-      // setWriting(false);
     }
   }
 

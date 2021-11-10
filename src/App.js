@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Article from "./Article";
 import ArticleEntry from "./ArticleEntry";
 import { SignIn, SignOut, useAuthentication } from "./authService";
-import { fetchArticles, createArticle, deleteArticle } from "./articleService";
+import { fetchArticles, createArticle, deleteArticle, editArticle } from "./articleService";
 import "./App.css";
 import { BsCloudyFill } from "react-icons/bs";
 
