@@ -5,6 +5,7 @@ import ArticleEntry from "./ArticleEntry";
 import { SignIn, SignOut, useAuthentication } from "./authService";
 import { fetchArticles, createArticle, deleteArticle } from "./articleService";
 import "./App.css";
+import { BsCloudyFill } from "react-icons/bs";
 
 export default function App() {
   const [articles, setArticles] = useState([]);
@@ -43,11 +44,11 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        Blog
+      
+        <div id="headerTitle">Culinary Cloud <BsCloudyFill/> </div>
         {user && <button onClick={() => setWriting(true)}>New Article</button>}
         {!user ? <SignIn /> : <SignOut />}
       </header>
-
       {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
 
       {!user ? (

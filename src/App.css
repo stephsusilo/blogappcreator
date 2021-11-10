@@ -4,15 +4,22 @@
   grid-template-columns: 250px auto;
   height: 100vh;
   overflow: scroll;
+  background-color: #cfebec;
+  background-image: linear-gradient(315deg, #8ad3d3 0%, #f5f7fa 74%);
+  font-family: 'Lato', sans-serif;
 }
+
+
 
 header {
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  align-items: center;
+  background-color: rgb(78, 84, 85);
   color: white;
   grid-column: 1 / span 2;
-  padding: 10px 5px;
+  padding: 5px;
+  font-family: 'Space Mono', monospace;
 }
 
 form {
@@ -35,13 +42,30 @@ article {
 }
 
 nav {
-  background-color: #dee9ff;
+  background-color: white;
 }
 
-nav p:hover {
-  text-decoration: underline;
-  cursor: pointer;
+nav p {
+  position: relative;
 }
+
+nav p:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(127, 214, 207);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+nav p:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
 
 article .date {
   font-style: italic;
@@ -49,4 +73,19 @@ article .date {
 
 article .body {
   white-space: break-spaces;
+}
+
+button {
+  box-shadow: black 4px 4px 0 0;
+  color: black;
+  background-color: white;
+  border-radius: 33px;
+  max-width: unset;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+button:active {
+  box-shadow: 1 5px #666;
+  transform: translateY(2px);
 }

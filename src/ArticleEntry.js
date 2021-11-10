@@ -11,7 +11,7 @@ export default function ArticleEntry({ setWriting, addArticle }) {
     setError(null);
     e.preventDefault();
     if (!title.trim() || !body.trim()) {
-      setError("The title and body must be supplied");
+      setError("The title, rating, and body must be supplied");
     } else {
       addArticle({ title, rating, body });
       // setWriting(false);
@@ -22,9 +22,9 @@ export default function ArticleEntry({ setWriting, addArticle }) {
     <div>
       <form onSubmit={submit}>
         {error && <p>{error}</p>}
-        Title <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        Restaurant <input value={title} onChange={(e) => setTitle(e.target.value)} />
         Rating <input type="number" min="1" max="5" value={rating} onChange={(e) => setRating(e.target.value)} />
-        Body{" "}
+        Review{" "}
         <textarea
           rows="8"
           value={body}
