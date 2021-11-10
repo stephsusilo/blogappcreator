@@ -6,6 +6,7 @@ import {
   deleteDoc,
   doc,
   Timestamp,
+  setDoc,
 } from "firebase/firestore";
 
 //All functions below are for interacting with cloud service firebase
@@ -33,4 +34,9 @@ export async function fetchArticles() {
 export async function deleteArticle(id) {
   await deleteDoc(doc(db, "articles", id));
   return id;
+}
+
+export async function updateArticle(id, body) {
+  await setDoc(doc(db, "articles", id), { Body: body }, { merge: true });
+  return body;
 }

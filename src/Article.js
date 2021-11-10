@@ -1,8 +1,13 @@
 // import { doc, deleteDoc } from "@firebase/firestore";
 // import { ref } from "./App";
 // import { db } from "./firebaseConfig";
+import { useState } from "react";
+import { updateArticle } from "./articleService";
+import FbEdit from "./FbEdit";
 
-export default function Article({ article, removeArticle }) {
+export default function Article({ article, removeArticle, updateArticle }) {
+  const [editing, setEditing] = useState(false);
+
   return (
     <article>
       {!article ? (
@@ -14,7 +19,10 @@ export default function Article({ article, removeArticle }) {
           <p className="rating">{`Rating: ${article.Rating}`}</p>
           <p className="body">{article.Body}</p>
           <button onClick={() => removeArticle(article.id)}> Delete </button>
-          <button> Edit </button>
+          <button onClick={() => setEditing(true)}> Edit </button>
+          {editing === true && (
+            <FbEdit article={article} action={updateArticle} />
+          )}
         </div>
       )}
     </article>
