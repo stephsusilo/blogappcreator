@@ -4,10 +4,12 @@ function FbEdit({ article, action }) {
   const [content, setContent] = useState(article.Body);
   return (
     <div>
-      <input
+      <textarea
+        id="editTextInput"
         type="text"
+        rows="15"
         value={content}
-        placeholder="Type new review here"
+        placeholder="Type to edit review"
         onChange={(e) => setContent(e.target.value)}
       />
       <button
