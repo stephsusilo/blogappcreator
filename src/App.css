@@ -87,6 +87,7 @@ article {
   margin: 5px 20px 0px 20px;
   padding: 10px;
   height: 90%;
+  position: relative;
 }
 
 #reviewContent {
@@ -120,8 +121,10 @@ button:active {
 }
 
 #cloudGirl {
-  height: 100%;
   width: 100%;
+  min-height: auto;
+  min-width: auto;
+  position: relative;
   border-radius: 20px;
 }
 
