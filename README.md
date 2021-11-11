@@ -1,5 +1,3 @@
-# A Blog Starter App
+# Culinary Cloud
 
-A little React blog app.
-
-This repo is designed for you to fork and extend with better styles and connecting to a back end.
+A blog app for restaurant reviews using React and Firebase.
