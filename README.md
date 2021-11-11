@@ -1,6 +1,6 @@
 # Culinary Cloud
 
-![logo](/assets/culinaryCloudLogo.png)
+![logo](src/assets/culinaryCloudLogo.png)
 
 ## Table of Contents
 * [Project Description](#project-description)
