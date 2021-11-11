@@ -1,6 +1,7 @@
 # Culinary Cloud
 
 <img src="assets/culinaryCloudLogo.png" height="10">
+
 ## Table of Contents
 * [Project Description](#project-description)
 * [Team Members](#team-members)
