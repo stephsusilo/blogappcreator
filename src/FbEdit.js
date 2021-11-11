@@ -7,7 +7,7 @@ function FbEdit({ article, action }) {
       <input
         type="text"
         value={content}
-        placeholder="type new article body here"
+        placeholder="Type new review here"
         onChange={(e) => setContent(e.target.value)}
       />
       <button
@@ -15,7 +15,7 @@ function FbEdit({ article, action }) {
           action(article.id, content);
         }}
       >
-        update
+        Save
       </button>
     </div>
   );

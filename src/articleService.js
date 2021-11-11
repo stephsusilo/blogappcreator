@@ -8,16 +8,19 @@ import {
   Timestamp,
   setDoc,
 } from "firebase/firestore";
+import { auth } from "./firebaseConfig"
+
 
 //All functions below are for interacting with cloud service firebase
 
 export async function createArticle({ title, rating, body }) {
+  const user = auth.currentUser.displayName;
   const data = { title, rating, body, data: Timestamp.now() };
   const docRef = await addDoc(collection(db, "articles"), {
     Title: title,
     Rating: rating,
     Body: body,
-    Author: "Claudia",
+    Author: user,
   });
 
   return docRef;

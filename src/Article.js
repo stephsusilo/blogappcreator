@@ -1,19 +1,17 @@
-// import { doc, deleteDoc } from "@firebase/firestore";
-// import { ref } from "./App";
-// import { db } from "./firebaseConfig";
 import { useState } from "react";
-import { updateArticle } from "./articleService";
 import FbEdit from "./FbEdit";
+import logo from "./assets/culinaryCloud.png";
 
 export default function Article({ article, removeArticle, updateArticle }) {
   const [editing, setEditing] = useState(false);
-
+  
   return (
     <article>
       {!article ? (
-        <p>No article selected</p>
+          <img id="cloudGirl" alt="Girl on cloud eating" src={logo} />
+        
       ) : (
-        <div className="article-display">
+        <div id="reviewContent" className="article-display">
           <h2>{article.Title}</h2>
           <p className="date">{`Written by: ${article.Author}`}</p>
           <p className="rating">{`Rating: ${article.Rating}`}</p>

@@ -5,20 +5,20 @@
   height: 100vh;
   overflow: scroll;
   background-color: #cfebec;
-  background-image: linear-gradient(315deg, #8ad3d3 0%, #f5f7fa 74%);
+  background-image: linear-gradient(315deg, #4BBBE5 0%, #f5f7fa 74%);
   font-family: 'Lato', sans-serif;
 }
 
-
-
 header {
   display: flex;
+  grid-column: 1 / span 2;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(78, 84, 85);
+  background-color: black;
   color: white;
-  grid-column: 1 / span 2;
-  padding: 5px;
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 10px;
+  padding: 10px;
   font-family: 'Space Mono', monospace;
 }
 
@@ -26,27 +26,38 @@ header {
   font-size: 20px;
   margin-left: 15px;
 }
+
 form {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: white;
+  position: relative;
+  padding: 10px;
+  padding-left: 20px;
+  margin: 5px;
+  height: 90%;
+  width: 95%;
+  border-radius: 20px;
 }
 
 form input,
 form textarea {
   margin-bottom: 10px;
-  width: 300px;
+  width: 30%;
 }
 
-nav,
-article {
-  height: 100%;
-  padding: 10px;
+form textarea {
+  width: 50%;
 }
 
 nav {
-  background-color: white;
+  background-color: #2dbaee4b;
+  border-radius: 20px;
+  margin: 5px 10px 0px 20px;
+  height: 90%;
+  padding: 10px;
+  overflow: scroll;
 }
 
 nav p {
@@ -60,7 +71,7 @@ nav p:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(127, 214, 207);
+  background-color: #4BBBE5;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
@@ -70,6 +81,17 @@ nav p:hover:before {
   width: 100%;
 }
 
+article {
+  background-color: white;
+  border-radius: 20px;
+  margin: 5px 20px 0px 20px;
+  padding: 10px;
+  height: 90%;
+}
+
+#reviewContent {
+  margin: 40px 40px 0px 20px;
+}
 
 article .date {
   font-style: italic;
@@ -80,16 +102,22 @@ article .body {
 }
 
 button {
-  box-shadow: black 4px 4px 0 0;
-  color: black;
   background-color: white;
+  color: black;
+  border-style: 1px white;
   border-radius: 33px;
   max-width: unset;
-  border: 1px solid black;
   margin: 5px;
 }
 
 button:active {
-  box-shadow: 1 5px #666;
-  transform: translateY(2px);
+  background-color: rgb(180, 180, 180);
+  color: white;
+  border-color: rgb(180, 180, 180);
+}
+
+#cloudGirl {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
 }

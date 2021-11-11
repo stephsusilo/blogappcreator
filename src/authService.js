@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
 import { auth } from "./firebaseConfig"
+import { FaUserAlt } from "react-icons/fa";
 
 export function SignIn() {
   return <button onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}>Sign In</button>
@@ -9,7 +10,7 @@ export function SignIn() {
 export function SignOut() {
   return (
     <div>
-      Hello, {auth.currentUser.displayName} &nbsp;
+      < FaUserAlt /> {auth.currentUser.displayName} &nbsp;
       <button onClick={() => signOut(auth)}>Sign Out</button>
     </div>
   )

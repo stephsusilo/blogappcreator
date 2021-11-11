@@ -3,12 +3,7 @@ import Nav from "./Nav";
 import Article from "./Article";
 import ArticleEntry from "./ArticleEntry";
 import { SignIn, SignOut, useAuthentication } from "./authService";
-import {
-  fetchArticles,
-  createArticle,
-  deleteArticle,
-  updateArticle,
-} from "./articleService";
+import { fetchArticles, createArticle, deleteArticle, editArticle } from "./articleService";
 import "./App.css";
 import { BsCloudyFill } from "react-icons/bs";
 
@@ -46,22 +41,12 @@ export default function App() {
     setArticles(newArticles);
   }
 
-  function updateAction(id, body) {
-    console.log("updating", id, body);
-    updateArticle(id, body).then((body) => {
-      const updated = { ...article, Body: body };
-      setArticle(updated);
-      setArticles(articles.map((a) => (a.id === updated.id ? updated : a)));
-    });
-  }
 
   return (
     <div className="App">
       <header>
-        <div id="headerTitle">
-          Culinary Cloud <BsCloudyFill />{" "}
-        </div>
         {user && <button onClick={() => setWriting(true)}>New Article</button>}
+        <div id="headerTitle">Culinary Cloud <BsCloudyFill/> </div>
         {!user ? <SignIn /> : <SignOut />}
       </header>
       {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
@@ -71,11 +56,7 @@ export default function App() {
       ) : writing ? (
         <ArticleEntry addArticle={addArticle} />
       ) : (
-        <Article
-          article={article}
-          removeArticle={removeArticle}
-          updateArticle={updateAction}
-        />
+        <Article article={article} removeArticle={removeArticle} />
       )}
     </div>
   );
