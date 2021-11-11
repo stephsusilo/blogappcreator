@@ -10,7 +10,6 @@ export default function Article({ article, removeArticle, updateArticle }) {
     <article>
       {!article ? (
           <img id="cloudGirl" alt="Girl on cloud eating" src={logo} />
-        
       ) : (
         <div id="reviewContent" className="article-display">
           <h2>{article.Title}</h2>

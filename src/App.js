@@ -13,18 +13,14 @@ export default function App() {
   const [writing, setWriting] = useState(false);
   const user = useAuthentication();
 
-  // This is a trivial app, so just fetch all the articles only when
-  // a user logs in. A real app would do pagination. Note that
-  // "fetchArticles" is what gets the articles from the service and
-  // then "setArticles" writes them into the React state.
   useEffect(() => {
     if (user) {
       fetchArticles().then(setArticles);
     }
   }, [user]);
+
   // Update the "database" *then* update the internal React state. These
   // two steps are definitely necessary.
-
   function addArticle({ title, rating, body }) {
     createArticle({ title, rating, body }).then((article) => {
       setArticle(article);
@@ -33,14 +29,16 @@ export default function App() {
     });
   }
 
-  //change article state in nav and page
+  // Change article state in nav and page
   function removeArticle(id) {
-    deleteArticle(id); //update to firebase
+    // Update to firebase
+    deleteArticle(id); 
     //Update to React state
     const newArticles = articles.filter((article) => article.id !== id);
     setArticles(newArticles);
   }
 
+  // Allow user to edit body of published text
   function updateAction(id, body) {
     console.log("updating", id, body);
     updateArticle(id, body).then((body) => {

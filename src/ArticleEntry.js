@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ArticleEntry({ addArticle }) {
-  //assign props to different states
+  // Assign props to different states
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState("");
   const [body, setBody] = useState("");

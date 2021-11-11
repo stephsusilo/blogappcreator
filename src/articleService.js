@@ -10,7 +10,6 @@ import {
 } from "firebase/firestore";
 import { auth } from "./firebaseConfig"
 
-//All functions below are for interacting with cloud service firebase
 
 export async function createArticle({ title, rating, body }) {
   const user = auth.currentUser.displayName;
@@ -21,7 +20,6 @@ export async function createArticle({ title, rating, body }) {
     Body: body,
     Author: user,
   });
-
   return docRef;
 }
 
