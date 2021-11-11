@@ -124,3 +124,8 @@ button:active {
   width: 100%;
   border-radius: 20px;
 }
+
+#editTextInput {
+  margin-top: 20px;
+  width: 50%;
+}

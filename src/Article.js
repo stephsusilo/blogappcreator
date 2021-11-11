@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { updateArticle } from "./articleService";
 import FbEdit from "./FbEdit";
 import logo from "./assets/culinaryCloud.png";
 

@@ -7,7 +7,7 @@ function FbEdit({ article, action }) {
       <textarea
         id="editTextInput"
         type="text"
-        rows="15"
+        rows="10"
         value={content}
         placeholder="Type to edit review"
         onChange={(e) => setContent(e.target.value)}
@@ -17,7 +17,7 @@ function FbEdit({ article, action }) {
           action(article.id, content);
         }}
       >
-        Save
+      Save
       </button>
     </div>
   );
