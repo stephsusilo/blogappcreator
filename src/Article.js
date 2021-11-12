@@ -19,7 +19,11 @@ export default function Article({ article, removeArticle, updateArticle }) {
           <button onClick={() => removeArticle(article.id)}> Delete </button>
           <button onClick={() => setEditing(true)}> Edit </button>
           {editing === true && (
-            <FbEdit article={article} action={updateArticle} />
+            <FbEdit
+              article={article}
+              action={updateArticle}
+              setEditing={setEditing}
+            />
           )}
         </div>
       )}

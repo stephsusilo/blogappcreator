@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-function FbEdit({ article, action }) {
+function FbEdit({ article, action, setEditing }) {
   const [content, setContent] = useState(article.Body);
+
   return (
     <div>
       <textarea
@@ -14,10 +15,11 @@ function FbEdit({ article, action }) {
       />
       <button
         onClick={() => {
+          setEditing(false);
           action(article.id, content);
         }}
       >
-      Save
+        Save
       </button>
     </div>
   );
