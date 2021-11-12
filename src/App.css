@@ -5,13 +5,13 @@
   height: 100vh;
   overflow: scroll;
   background-color: #cfebec;
-  background-image: linear-gradient(315deg, #4BBBE5 0%, #f5f7fa 74%);
-  font-family: 'Lato', sans-serif;
+  background-image: linear-gradient(315deg, #4bbbe5 0%, #f5f7fa 74%);
+  font-family: "Lato", sans-serif;
 }
 
 header {
   display: flex;
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 4;
   justify-content: space-between;
   align-items: center;
   background-color: black;
@@ -19,7 +19,7 @@ header {
   border-radius: 0px 0px 20px 20px;
   margin-bottom: 10px;
   padding: 10px;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
 }
 
 #headerTitle {
@@ -41,14 +41,13 @@ form {
   border-radius: 20px;
 }
 
-form input,
-form textarea {
+form input {
   margin-bottom: 10px;
   width: 30%;
 }
 
 form textarea {
-  width: 50%;
+  width: 70%;
 }
 
 nav {
@@ -71,7 +70,7 @@ nav p:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #4BBBE5;
+  background-color: #4bbbe5;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
@@ -130,5 +129,14 @@ button:active {
 
 #editTextInput {
   margin-top: 20px;
-  width: 50%;
+  width: 100%;
+}
+
+@media (min-width: 650px) and (max-width: 750px) {
+  #article,
+  #nav,
+  #editTextInput {
+    height: auto;
+    width: auto;
+  }
 }

@@ -5,11 +5,11 @@ import logo from "./assets/culinaryCloud.png";
 
 export default function Article({ article, removeArticle, updateArticle }) {
   const [editing, setEditing] = useState(false);
-  
+
   return (
     <article>
       {!article ? (
-          <img id="cloudGirl" alt="Girl on cloud eating" src={logo} />
+        <img id="cloudGirl" alt="Girl on cloud eating" src={logo} />
       ) : (
         <div id="reviewContent" className="article-display">
           <h2>{article.Title}</h2>
